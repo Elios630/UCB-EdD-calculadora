@@ -120,21 +120,19 @@ char* converterParaPrefixa(const char *expr) {
             char *b = desempilharString(&pilha);
             char *a = desempilharString(&pilha);
 
-            char novaExpr[MAXEXPRESSAO];
-            snprintf(novaExpr, sizeof(novaExpr), "(%s %s %s)", a, token, b);
+            char resultado[MAXEXPRESSAO];
+            snprintf(resultado, sizeof(resultado), "%s %s %s", token, a, b);
 
-            empilharString(&pilha, novaExpr);
-        } else if (strcmp(token, "raiz") == 0 || strcmp(token, "sen") == 0 ||
-                   strcmp(token, "cos") == 0 || strcmp(token, "tg") == 0 || strcmp(token, "log") == 0) {
-            char *a = desempilharString(&pilha);
+            empilharString(&pilha, resultado);
 
-            char novaExpr[MAXEXPRESSAO];
-            snprintf(novaExpr, sizeof(novaExpr), "%s(%s)", token, a);
-
-            empilharString(&pilha, novaExpr);
+            free(a);
+            free(b);
+        } else {
+            printf("Operador inválido: %s\n", token);
         }
         token = strtok(NULL, " ");
     }
 
-    return strdup(pilha.dados[pilha.topo]);
+    char *prefixa = desempilharString(&pilha);
+    return prefixa;
 }

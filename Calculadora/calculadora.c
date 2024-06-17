@@ -128,7 +128,7 @@ char* converterParaPrefixa(const char *expr) {
             free(a);
             free(b);
         } else {
-            printf("Operador inválido: %s\n", token);
+            printf("Operador invalido: %s\n", token);
         }
         token = strtok(NULL, " ");
     }

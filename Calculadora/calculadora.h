@@ -27,7 +27,7 @@ double desempilhar(Pilha *p);
 char* desempilharString(PilhaDeStrings *p);
 
 char* converterParaPrefixa(const char *expr); // Retorna a forma inFixa de Str (posFixa)
-double avaliarRPN(const char *expr); // Calcula o valor de Str (na forma posFixa)
+double avaliarRPN(const char *expr); // Calcula o valor de Str (na forma posFixa).
 
 
 #endif

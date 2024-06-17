@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "calculadora.h"
 
-// para compilar: gcc -o calculadora main.c calculadora.c -lm         e  .\calculadora.exe
+// para compilar: gcc -o A main.c calculadora.c -lm         e  .\A.exe
 
 int main() {
     char *testes[] = {
@@ -20,7 +20,7 @@ int main() {
     };
     int numTestes = sizeof(testes) / sizeof(testes[0]);
 
-    printf("%-10s | %-30s | %-30s | %-20s\n", "Teste", "Notação Pós-Fixada", "Notação Pré-Fixada", "Valor final");
+    printf("%-10s | %-30s | %-30s | %-20s\n", "Teste", "Notacao Pos-Fixada", "Notacao Pre-Fixada", "Valor final");
     printf("-----------------------------------------------------------------------------\n");
 
     for (int i = 0; i < numTestes; ++i) {
